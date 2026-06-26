@@ -179,3 +179,103 @@ body {
   .hint-text { text-align: center; }
   .input-with-btn { flex-direction: column; }
 }
+
+/* Provider Chain Bar */
+.provider-bar {
+  margin: 16px 0 0;
+  padding: 10px 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+.provider-bar-inner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.provider-bar-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+.provider-bar-chain {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.pchain-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 10px;
+  border-radius: 6px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  font-size: 12px;
+  transition: all 0.3s;
+}
+.pchain-item.trying {
+  border-color: var(--accent);
+  background: var(--accent-subtle);
+  box-shadow: 0 0 8px rgba(124, 111, 240, 0.3);
+}
+.pchain-item.success {
+  border-color: var(--success);
+  background: rgba(52, 211, 153, 0.08);
+}
+.pchain-item.failed {
+  border-color: var(--danger);
+  background: var(--danger-subtle);
+  opacity: 0.5;
+}
+.pchain-num {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--text-muted);
+  color: var(--bg-primary);
+  font-size: 9px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pchain-item.trying .pchain-num { background: var(--accent); }
+.pchain-item.success .pchain-num { background: var(--success); }
+.pchain-name { font-weight: 500; }
+.pchain-badge {
+  font-size: 8px;
+  font-weight: 600;
+  padding: 1px 5px;
+  border-radius: 8px;
+  background: rgba(52, 211, 153, 0.15);
+  color: var(--success);
+  text-transform: uppercase;
+}
+.pchain-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--text-muted);
+  transition: all 0.3s;
+}
+.pchain-dot.active { background: var(--success); box-shadow: 0 0 6px rgba(52, 211, 153, 0.4); }
+.pchain-arrow { color: var(--text-muted); font-size: 13px; }
+.provider-bar-info { font-size: 12px; color: var(--text-secondary); margin-left: auto; white-space: nowrap; }
+
+/* Settings: Provider Keys */
+.provider-key-list { display: flex; flex-direction: column; gap: 12px; margin-bottom: 16px; }
+.provider-key-item { display: flex; flex-direction: column; gap: 6px; }
+.pkey-info { display: flex; align-items: center; gap: 8px; }
+.pkey-name { font-size: 13px; font-weight: 600; color: var(--text-secondary); }
+.pkey-badge { font-size: 9px; font-weight: 600; padding: 1px 6px; border-radius: 8px; background: rgba(52, 211, 153, 0.15); color: var(--success); text-transform: uppercase; }
+.pkey-status { font-size: 13px; margin-left: auto; }
+.pkey-input { width: 100%; padding: 8px 12px; background: var(--bg-elevated); border: 1px solid var(--border); border-radius: var(--radius-sm); color: var(--text-primary); font-size: 13px; outline: none; transition: all var(--transition); font-family: monospace; }
+.pkey-input:focus { border-color: var(--border-focus); box-shadow: 0 0 0 3px var(--accent-subtle); }
+.pkey-input::placeholder { color: var(--text-muted); }
+.save-keys-btn { width: 100%; padding: 10px; background: var(--accent); color: #fff; border: none; border-radius: var(--radius-sm); font-size: 14px; font-weight: 600; cursor: pointer; transition: all var(--transition); }
+.save-keys-btn:hover:not(:disabled) { background: var(--accent-hover); }
+.save-keys-btn:disabled { opacity: 0.5; cursor: not-allowed; }

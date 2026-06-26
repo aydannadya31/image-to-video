@@ -41,7 +41,7 @@
 
   <div class="container">
     <div class="hero">
-      <div class="hero-badge">Hugging Face Stable Video Diffusion</div>
+      <div class="hero-badge">⚡ 3 Katmanlı AI Zinciri</div>
       <h1>Görselden Video Oluşturun</h1>
       <p class="hero-sub">
         AI ile fotoğraflarınızı saniyeler içinde videoya dönüştürün.
@@ -120,6 +120,34 @@
     </div>
   </div>
 
+  <!-- Provider Chain Bar -->
+  <div class="provider-bar">
+    <div class="provider-bar-inner">
+      <span class="provider-bar-label">Sağlayıcı Zinciri:</span>
+      <div class="provider-bar-chain">
+        <div class="pchain-item" data-provider="hf">
+          <span class="pchain-num">1</span>
+          <span class="pchain-name">HuggingFace</span>
+          <span class="pchain-dot" id="pdot-hf"></span>
+        </div>
+        <span class="pchain-arrow">→</span>
+        <div class="pchain-item" data-provider="agnes">
+          <span class="pchain-num">2</span>
+          <span class="pchain-name">Agnes AI</span>
+          <span class="pchain-badge">Ücretsiz</span>
+          <span class="pchain-dot" id="pdot-agnes"></span>
+        </div>
+        <span class="pchain-arrow">→</span>
+        <div class="pchain-item" data-provider="muapi">
+          <span class="pchain-num">3</span>
+          <span class="pchain-name">HappyHorse</span>
+          <span class="pchain-dot" id="pdot-muapi"></span>
+        </div>
+      </div>
+      <div class="provider-bar-info" id="providerBarInfo">⏳ sorgulanıyor...</div>
+    </div>
+  </div>
+
   <!-- Settings Modal -->
   <div class="modal-overlay" id="settingsModal">
     <div class="modal">
@@ -132,21 +160,30 @@
         </button>
       </div>
       <div class="modal-body">
-        <div class="form-group">
-          <label for="hfTokenInput">Hugging Face Token</label>
-          <div class="input-with-btn">
-            <input type="password" id="hfTokenInput" placeholder="hf_...">
-            <button class="save-btn" id="saveKeyBtn">Kaydet</button>
+        <div class="provider-key-list">
+          <div class="provider-key-item">
+            <div class="pkey-info">
+              <span class="pkey-name">HuggingFace</span>
+              <span class="pkey-status" id="pstatus-hf">⏳</span>
+            </div>
+            <input type="password" class="pkey-input" id="key-hf" placeholder="hf_...">
           </div>
-          <p class="form-hint">
-            <a href="https://huggingface.co/settings/tokens" target="_blank" rel="noopener">Hugging Face</a>
-            hesabınızdan ücretsiz token alın.
-          </p>
+          <div class="provider-key-item">
+            <div class="pkey-info">
+              <span class="pkey-name">Agnes AI <span class="pkey-badge free">Ücretsiz</span></span>
+              <span class="pkey-status" id="pstatus-agnes">⏳</span>
+            </div>
+            <input type="password" class="pkey-input" id="key-agnes" placeholder="sk-...">
+          </div>
+          <div class="provider-key-item">
+            <div class="pkey-info">
+              <span class="pkey-name">HappyHorse (Muapi)</span>
+              <span class="pkey-status" id="pstatus-muapi">⏳</span>
+            </div>
+            <input type="password" class="pkey-input" id="key-muapi" placeholder="api key...">
+          </div>
         </div>
-        <div class="token-status" id="tokenStatus">
-          <span class="status-indicator inactive"></span>
-          <span id="tokenStatusText">Token ayarlanmamış</span>
-        </div>
+        <button class="save-keys-btn" id="saveKeysBtn">Tüm Key'leri Kaydet</button>
       </div>
     </div>
   </div>
